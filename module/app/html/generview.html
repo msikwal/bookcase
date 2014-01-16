@@ -1,0 +1,10 @@
+<div class="g_bookcase-container" style="margin : 20px;padding :10px;background: lime;">
+		{{#each this}}
+		<div class="js_g_bookshelf " style="background: pink;" >
+			<div>{{this.gener}}</div>
+			{{#each this.books}}
+				<div style="background: yellow;" class="g_book_row" data-isbn ="{{this.sId}}_{{this.isbn}}">{{this.title}} <b style="cursor:pointer;" class="g_book_row_del">delete</b></div>
+			{{/each}}
+		</div>
+		{{/each}}
+</div>
