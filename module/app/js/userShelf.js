@@ -3,13 +3,15 @@ define(function(require){
 	var $ = require('jquery');
 	var tmpl_src = require("text!../html/bookshelf.html");
 	var generview_tmp = require("text!../html/generview.html");
-	
+	var add_tmp = require("text!../html/addbook.html");
 	var userShelf = function(obj) {
 		this.bookCaseObj = obj;
 	};
 	userShelf.prototype = {
 			init : function (){
 				this.render();
+				this.renderAddForm();
+				this.hideShowEvents();
 			},
 			render : function (){
 				var storedArr = this.getStorage();
@@ -28,6 +30,29 @@ define(function(require){
 					return [];
 				}
 			},
+			renderAddForm : function (){
+				var self = this;
+				var addObj = {
+						"shelf_name" :self.shelfArr,
+						"gener_name" : self.generObj
+				};
+				$(".addbook-container").html(Handlebars.compile(add_tmp)(addObj));
+				
+			},
+			hideShowEvents : function (){
+				var self = this;
+				$(".butHideShow").on("click", function(e) {
+					var objStr = $(this).data('info');
+					if($("."+objStr).hasClass('hide')){
+						$("."+objStr).removeClass('hide');
+					}else{
+						$("."+objStr).addClass('hide');
+					}
+				});
+				$(".addbook-container .add_book").on("click", function(e) {
+					return self.addBookHandler.call(this,e,self);
+				});
+			},
 			renderBookShelf : function (){
 				$(".shelf-container").html(Handlebars.compile(tmpl_src)(this.bookShelfArr));
 			},
@@ -40,11 +65,15 @@ define(function(require){
 				var generMap = {};
                 var tempArr = new Array();
                 var tempArr2 = new Array();
+                self.shelfArr = new Array();
                 for(var shelfInd in self.bookShelfArr){
                         var bookArr = self.bookShelfArr[shelfInd].books;
                         var shelfId = self.bookShelfArr[shelfInd].id;
                         for(var bookInd in bookArr){
                               bookArr[bookInd].sId = shelfId;
+                              if ($.inArray(shelfId,self.shelfArr) === -1) {
+                            	  self.shelfArr.push(shelfId);
+                              }	  
                               tempArr.push(bookArr[bookInd]);
                         }
                 }
@@ -63,13 +92,17 @@ define(function(require){
                 return  tempArr2;
 			},
 			addBookHandler : function (e,self){
+				if(!$("#b_frm")[0].checkValidity()){
+					return;
+				}
+				var inputArr = $("#b_frm").serializeArray();			
 				var testObj = {
-						"title": "Secrets of the JavaScript Msikwal",
-                        "isbn": "193398869eeX",
-                        "author": "John Resig",
-                        "genre": "Technology"	
+					"title": inputArr[1].value ,
+	                "isbn": inputArr[2].value,
+	                "author": inputArr[3].value,
+	                "genre": inputArr[4].value	
 				};
-				self.addBook("s1",testObj);
+				self.addBook(inputArr[0].value,testObj);
 				self.setStorage();
 				self.render();
 			},
@@ -89,10 +122,6 @@ define(function(require){
 				});
 				$(".g_bookcase-container .g_book_row .g_book_row_del").on("click", function(e) {
 					return self.deleteRowHandler.call(this,e,self);
-				});
-				
-				$(".bookcase-container .add_book").on("click", function(e) {
-					return self.addBookHandler.call(this,e,self);
 				});
 				$(".bookcase-container .book_row").on("dragstart", function(e) {
 					return self.dragHandler.call(this,e,self);

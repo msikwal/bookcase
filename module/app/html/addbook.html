@@ -1,0 +1,16 @@
+<fieldset>
+		<legend>Add Book Information:</legend>
+		<form name="b_frm" id="b_frm" method="post">
+		<b>Shelf</b> : <select name="b_shelf" id="b_shelf"> {{#each this.shelf_name}}
+				<option value="{{this}}">{{this}}</option> {{/each}}
+				</select><br>
+		<b>Title</b>: 	<input type="text" name="b_title" id="b_title" required /><br>
+		<b>Isbn</b>:  	<input type="text" name="b_isbn" id="b_isbn" required /><br>
+		<b>Author</b>: <input type="text" name="b_author" id="b_author" required /><br> 
+		<b>Genre</b>: <select name="b_gener" id="b_gener"> 
+				{{#each this.gener_name}}
+					<option value="{{this.gener}}">{{this.gener}}</option> {{/each}}
+				</select><br>
+				<button class="add_book" >Add Book</button>
+	</form>
+</fieldset>
