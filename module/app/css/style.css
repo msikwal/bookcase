@@ -1,0 +1,115 @@
+.pad10 {
+	padding-right: 10px;
+}
+
+.hide {
+	display: none;
+}
+
+.mar10 {
+	margin: 20px;
+}
+
+.pad10 {
+	padding: 10px;
+}
+
+.swell3 {
+	background-color: #3EAAE9;
+	border: 1px solid #E3E3E3;
+	border-radius: 4px;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;
+	padding: 5px;
+}
+
+.swell {
+	background-color: #F5F5F5;
+	border: 1px solid #E3E3E3;
+	border-radius: 4px;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;
+	margin-bottom: 10px;
+	min-height: 160px;
+	padding: 12px;
+}
+
+.swell2 {
+	background-color: #C09853;
+	border: 1px solid #E3E3E3;
+	border-radius: 4px;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;
+	margin-bottom: 10px;
+	min-height: 10px;
+	padding: 12px;
+	float: left;
+	width: 100px;
+	height: 110px;
+	margin-right: 10px;
+}
+
+.stext {
+	color: #FFF;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 800;
+	line-height: 1.1;
+	background-color: #295988;
+	border: 1px solid #E3E3E3;
+	border-radius: 4px;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;
+	padding: 5px;
+}
+
+.gwell3 {
+	background-color: #DD5600;
+	border: 1px solid #E3E3E3;
+	border-radius: 4px;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;
+	padding: 5px;
+}
+
+.gwell {
+	background-color: #F5F5F5;
+	border: 1px solid #E3E3E3;
+	border-radius: 4px;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;
+	margin-bottom: 10px;
+	min-height: 150px;
+	padding: 12px;
+}
+
+.gwell2 {
+	background-color: #EBCCCC;
+	border: 1px solid #E3E3E3;
+	border-radius: 4px;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;
+	margin-bottom: 10px;
+	min-height: 10px;
+	padding: 12px;
+	float: left;
+	width: 100px;
+	height: 110px;
+	margin-right: 10px;
+}
+
+.btn-primary {
+	background-color: #2FA4E7;
+	border-color: #2FA4E7;
+	color: #FFFFFF;
+	margin: 5px;
+}
+
+.btn {
+	-moz-user-select: none;
+	background-image: none;
+	border: 1px solid rgba(0, 0, 0, 0);
+	border-radius: 4px;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 1.42857;
+	margin-bottom: 0;
+	padding: 8px 12px;
+	text-align: center;
+	vertical-align: middle;
+	white-space: nowrap;
+}

@@ -9,36 +9,20 @@
         <title></title>
         <meta name="description" content="Bookshelves, manage your books">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-      <!--   <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css"> 
-        <link rel="stylesheet" href="module/libraries/foundation/5.0.2/css/foundation.min.css">-->
-        <style>
-        .pad10{
-        	padding-right : 10px;
-        }	
-        .hide{
-        	display : none;	
-        }
-        .mar10{
-        	margin : 20px;
-        }
-        .pad10{
-        	padding :10px;
-        }
-        </style>
+        <link rel="stylesheet" href="module/app/css/style.css"> 
     </head>
     <body>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-	        <div class="mar10 pad10">
-	        	<a href="javascript:void(0);" class="butHideShow" data-info="shelf-container">Shelf View</a><br>
-	        	<a href="javascript:void(0);" class="butHideShow" data-info="gener-container">Genre View</a><br>
-	        	<a href="javascript:void(0);" class="butHideShow" data-info="addbook-container">Add New Book</a>
+	        <div class="">
+	        	<a href="javascript:void(0);" class="butHideShow btn btn-primary" data-info="shelf-container">Shelf View</a>
+	        	<a href="javascript:void(0);" class="butHideShow btn btn-primary" data-info="gener-container">Genre View</a>
+	        	<a href="javascript:void(0);" class="butHideShow btn btn-primary" data-info="addbook-container">Add New Book</a>
 	        </div>
-	        <div class="shelf-container"></div>
-	        <div class="gener-container hide"></div>
-	        <div class="addbook-container hide mar10 pad10"></div>
+	        <div class="maindiv shelf-container mar10 pad10"></div>
+	        <div class="maindiv gener-container hide mar10 pad10"></div>
+	        <div class="maindiv addbook-container hide mar10 pad10"></div>
 			<script src="module/amd-config/amd-config.js"></script>
 			<script src="module/libraries/require/require.js"></script>
     </body>

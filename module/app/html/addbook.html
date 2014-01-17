@@ -1,5 +1,6 @@
+<div class="swell">
 <fieldset>
-		<legend>Add Book Information:</legend>
+		<legend class="stext">Add Book Information</legend>
 		<form name="b_frm" id="b_frm" method="post">
 		<b>Shelf</b> : <select name="b_shelf" id="b_shelf"> {{#each this.shelf_name}}
 				<option value="{{this}}">{{this}}</option> {{/each}}
@@ -14,3 +15,4 @@
 				<button class="add_book" >Add Book</button>
 	</form>
 </fieldset>
+</div>

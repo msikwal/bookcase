@@ -1,9 +1,9 @@
-<div class="bookcase-container" style="margin : 20px;padding :10px;background: lime;">
+<div class="bookcase-container swell3">
 		{{#each this}}
-		<div class="js-bookshelf " style="background: orange;">
-			<div>{{this.title}}</div>
+		<div class="js-bookshelf swell" data-id="{{this.id}}">
+			<div class="stext">{{this.title}}</div>
 			{{#each this.books}}
-				<div draggable="true"  style="background: yellow;" class="book_row" data-isbn ="{{../this.id}}_{{this.isbn}}">{{this.title}} <b style="cursor:pointer;" class="book_row_del">X</b></div>
+				<div draggable="true" class="book_row swell2" data-isbn ="{{../this.id}}_{{this.isbn}}">{{this.title}} <b style="cursor:pointer;" class="book_row_del">X</b></div>
 			{{/each}}
 		</div>
 		{{/each}}

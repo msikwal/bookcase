@@ -42,12 +42,14 @@ define(function(require){
 			hideShowEvents : function (){
 				var self = this;
 				$(".butHideShow").on("click", function(e) {
+					$(".maindiv").removeClass('hide').addClass('hide');
+					
 					var objStr = $(this).data('info');
-					if($("."+objStr).hasClass('hide')){
+					//if($("."+objStr).hasClass('hide')){
 						$("."+objStr).removeClass('hide');
-					}else{
-						$("."+objStr).addClass('hide');
-					}
+					//}else{
+						//$("."+objStr).addClass('hide');
+					//}
 				});
 				$(".addbook-container .add_book").on("click", function(e) {
 					return self.addBookHandler.call(this,e,self);
@@ -126,10 +128,10 @@ define(function(require){
 				$(".bookcase-container .book_row").on("dragstart", function(e) {
 					return self.dragHandler.call(this,e,self);
 				});
-				$(".bookcase-container .book_row").on("drop", function(e) {
+				$(".bookcase-container .js-bookshelf").on("drop", function(e) {
 					return self.dropHandler.call(this,e,self);
 				});
-				$(".bookcase-container .book_row").on("dragover", function(e) {
+				$(".bookcase-container .js-bookshelf").on("dragover", function(e) {
 					return self.allowDropHandler.call(this,e,self);
 				});
 			},
@@ -168,8 +170,8 @@ define(function(require){
 				ev.preventDefault();
 				var oldbookid = ev.originalEvent.dataTransfer.getData("uid");
 				var objectToAdd = self.deleteBook(oldbookid);
-				var newbookid = $(ev.currentTarget).data('isbn');
-				self.addBook(newbookid.split("_")[0],{
+				var shelfId = $(ev.currentTarget).data('id');
+				self.addBook(shelfId,{
 					"title": objectToAdd[0].title,
                     "isbn": objectToAdd[0].isbn,
                     "author": objectToAdd[0].author,

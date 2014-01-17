@@ -1,9 +1,9 @@
-<div class="g_bookcase-container" style="margin : 20px;padding :10px;background: lime;">
+<div class="g_bookcase-container gwell3">
 		{{#each this}}
-		<div class="js_g_bookshelf " style="background: pink;" >
-			<div>{{this.gener}}</div>
+		<div class="js_g_bookshelf swell">
+			<div class="stext">{{this.gener}}</div>
 			{{#each this.books}}
-				<div style="background: yellow;" class="g_book_row" data-isbn ="{{this.sId}}_{{this.isbn}}">{{this.title}} <b style="cursor:pointer;" class="g_book_row_del">X</b></div>
+				<div class="g_book_row gwell2" data-isbn ="{{this.sId}}_{{this.isbn}}">{{this.title}} <b style="cursor:pointer;" class="g_book_row_del">X</b></div>
 			{{/each}}
 		</div>
 		{{/each}}
